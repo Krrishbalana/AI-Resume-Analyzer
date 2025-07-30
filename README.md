@@ -96,10 +96,4 @@ You can deploy it to platforms like:
 
 ---
 
-## 📜 License
-
-MIT License
-
----
-
 Made with ❤️ by [Krish Balana](https://github.com/krishbalana)
