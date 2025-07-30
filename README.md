@@ -1,87 +1,105 @@
-# Welcome to React Router!
+# Resume AI Feedback Analyzer
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A full-stack web app that analyzes resumes using AI to provide smart ATS feedback and improvement tips based on the job role and description provided.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+![Preview](./public/images/resume-preview.png)
 
-## Features
+## 🚀 Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- Upload resume as PDF
+- Converts PDF to image for AI visualization
+- Gets AI-powered feedback on resume tailored to job title & description
+- Smart ATS score and improvement tips
+- Modern responsive UI
 
-## Getting Started
+## 🧰 Tech Stack
 
-### Installation
+- **Frontend**: React, TypeScript, Tailwind CSS
+- **Backend**: Puter SDK (FS, KV, AI modules)
+- **AI**: OpenAI-powered resume analysis
+- **PDF Handling**: `pdfjs-dist` to render and convert PDFs
 
-Install the dependencies:
+---
+
+## 🛠️ How to Run the Project Locally
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/krishbalana/resume-ai-feedback.git
+cd resume-ai-feedback
+```
+
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Development
+### 3. Setup `.env` (If required)
 
-Start the development server with HMR:
+If the project needs environment variables (for API keys, Puter SDK, etc.), create a `.env` file like:
+
+```bash
+VITE_PUTER_API_KEY=your_key_here
+```
+
+> _Note: Check the project for `.env.example` if available._
+
+### 4. Start the App
 
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+Visit `http://localhost:5173` in your browser.
 
 ---
 
-Built with ❤️ using React Router.
+## 📁 Folder Structure
+
+```
+├── app/
+│   ├── components/
+│   ├── lib/
+│   ├── routes/
+│   ├── public/
+│   └── ...
+├── constants/
+├── public/
+│   └── images/
+├── README.md
+└── ...
+```
+
+---
+
+## ✨ How It Works
+
+1. User uploads a resume (PDF)
+2. PDF is converted to an image using `pdfjs-dist`
+3. File & image are uploaded via `fs.upload` (Puter)
+4. AI is triggered via `ai.feedback()` with job title + description
+5. Resume feedback is stored in `kv` store
+6. User is redirected to result page with analysis
+
+---
+
+## 📦 Deployment
+
+You can deploy it to platforms like:
+
+- **Vercel** (Recommended for frontend)
+- **Netlify**
+- **Render** (if you need server features)
+- Make sure to include necessary env variables in production.
+
+---
+
+## 📜 License
+
+MIT License
+
+---
+
+Made with ❤️ by [Krish Balana](https://github.com/krishbalana)
