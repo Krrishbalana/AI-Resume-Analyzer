@@ -1,5 +1,10 @@
 # Resume AI Feedback Analyzer
 
+## 🚀 Live Demo
+
+[Click here to view the live project](ai-resume-analyzer-snowy.vercel.app)
+
+
 A full-stack web app that analyzes resumes using AI to provide smart ATS feedback and improvement tips based on the job role and description provided.
 
 ![Preview](./public/images/resume-preview.png)
